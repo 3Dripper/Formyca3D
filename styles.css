@@ -101,24 +101,27 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   }
   
-  /* Galería */
-  .gallery-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
-  }
-  
-  .gallery-container img {
-    width: 100%;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-  }
-  
-  .gallery-container img:hover {
-    transform: scale(1.05);
-  }
-  
+ /* Galería */
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 200px)); /* tamaño fijo */
+  gap: 1rem;
+  justify-content: center; /* centra la galería si sobra espacio */
+}
+
+.gallery-container img {
+  width: 200px;          /* tamaño fijo uniforme */
+  height: 200px;         /* igual altura para cuadrarlas */
+  object-fit: cover;     /* recorta si la proporción es distinta */
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.gallery-container img:hover {
+  transform: scale(1.05);
+}
+
   /* Tabla de Precios */
   table {
     width: 80%;
